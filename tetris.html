@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Blockrain JS Example</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/blockrain@0.2.0/src/blockrain.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+<style>
+body{
+  background-color: #111;
+  color: #3D9970;
+  padding-top: 5%;
+}
+.container{
+  background-color: #000;
+  border-radius: 5%;
+}
+#themes{
+  padding-left: 15%;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+
+    <div class="col"><br>
+      <h1 class="card-title text-center">BlockRain.JS</h1><br>
+
+      <div class="btn-group btn-group-toggle themes"  id="themes" data-toggle="buttons">
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="candy"> Candy
+        </label>
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="modern"> Modern
+        </label>
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="retro"> Retro
+        </label>
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="vim"> Vim
+        </label>
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="monochrome"> Monochrome
+        </label>
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="gameboy"> Gameboy
+        </label>
+        <label class="btn btn-dark">
+          <input type="radio" name="theme" value="aerolab"> Aerolab
+        </label>
+      </div><br><br>
+
+      <div class="game container" style="width:300px; height:500px;"></div><br>
+
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/blockrain@0.2.0/assets/js/jquery-1.11.1.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/blockrain@0.2.0/src/blockrain.jquery.themes.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/blockrain@0.2.0/src/blockrain.jquery.libs.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/blockrain@0.2.0/src/blockrain.jquery.src.js'></script>
+<script>var $game = $('.game').blockrain({autoplay: false, autoplayRestart: false});
+
+$("#themes input[name='theme']").click(function(){
+	$game.blockrain('theme', $(this).val());
+});</script>
+
+</body>
+</html>
